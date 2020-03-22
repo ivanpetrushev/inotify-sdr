@@ -11,7 +11,7 @@ Old WAV files are removed to save space.
 * timestampSDR (obviously) - https://github.com/qualitymanifest/timestampSDR/
 * inotify Python module - https://pypi.org/project/inotify/
 
-# Instructions
+# Usage
 * run timestampSDR - recommended settings in start-timestampSDR.sh
 * set SRC_DIR and DST_DIR in track_changes.py
 * run `python3 track_changes.py`
