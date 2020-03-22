@@ -1,11 +1,11 @@
-# Info
-inotify-sdr is auto-compressing tool for recordings saved from https://github.com/qualitymanifest/timestampSDR/
+# inotify-sdr
+inotify-sdr is automatic WAV compressing tool for recordings saved from https://github.com/qualitymanifest/timestampSDR/
 
-timestampSDR saves WAV audio in recording/ by default.
+inotify-sdr tracks new files and does compression to MP3 + classification by date in subdirectories.
 
-inotify-sdr tracks new files and does compression to MP3 + classification by date
+Currently existing WAV files in will be processed as well.
 
-Old WAV files are removed to save space
+Old WAV files are removed to save space.
 
 # Requirements
 * timestampSDR (obviously) - https://github.com/qualitymanifest/timestampSDR/
