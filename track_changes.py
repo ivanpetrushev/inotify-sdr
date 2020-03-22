@@ -58,8 +58,13 @@ def track_new_files():
             # for some reason timestampSDR emits IN_CLOSE_WRITE twice after save, trigger only on second
             if file_name == last_notified_file:
                 process_file(file_name)
+                last_notified_file = None
             else:
                 last_notified_file = file_name
+
+        # timestampSDR can automatically delete short recordings, no need to try to compress these
+        if 'IN_DELETE' in type_names:
+            last_notified_file = None
 
 
 if __name__ == '__main__':
