@@ -1,8 +1,3 @@
-# in case of  inotify.calls.InotifyError: Call failed (should not be -1): (-1) ERRNO=(0)
-# increase max_user_watches:
-# sudo sysctl fs.inotify.max_user_watches=524288
-# sudo sysctl -p
-
 import inotify.adapters
 from glob import glob
 import os
@@ -58,7 +53,7 @@ def track_new_files():
     for event in i.event_gen(yield_nones=False):
         (_, type_names, path, file_name) = event
 
-        print("PATH=[{}] FILENAME=[{}] EVENT_TYPES={}".format(path, file_name, type_names))
+        # print("PATH=[{}] FILENAME=[{}] EVENT_TYPES={}".format(path, file_name, type_names))
         if 'IN_CLOSE_WRITE' in type_names:
             # for some reason timestampSDR emits IN_CLOSE_WRITE twice after save, trigger only on second
             if file_name == last_notified_file:
